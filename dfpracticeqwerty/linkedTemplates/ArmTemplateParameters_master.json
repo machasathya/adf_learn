@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dfpracticeqwerty"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://sadatafactoryqwerty.dfs.core.windows.net/"
+		},
+		"eventbased_properties_typeProperties_scope": {
+			"value": "/subscriptions/a8332c12-bd8c-444f-9264-74d4ddb5480c/resourceGroups/rg_data_factory/providers/Microsoft.Storage/storageAccounts/sadatafactoryqwerty"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
