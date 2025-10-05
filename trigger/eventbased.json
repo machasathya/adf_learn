@@ -1,0 +1,25 @@
+{
+	"name": "eventbased",
+	"properties": {
+		"description": "whenever the files uploaded to storage",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copy_adls-adls_dynamic_multiplefiles",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/datafactory/blobs/source/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/a8332c12-bd8c-444f-9264-74d4ddb5480c/resourceGroups/rg_data_factory/providers/Microsoft.Storage/storageAccounts/sadatafactoryqwerty",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
