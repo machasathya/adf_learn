@@ -4,10 +4,17 @@
 		"description": "whenever the files uploaded to storage",
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [],
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copy_adls-adls_dynamic_multiplefiles",
+					"type": "PipelineReference"
+				}
+			}
+		],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
-			"blobPathBeginsWith": "source/",
+			"blobPathBeginsWith": "/datafactory/blobs/source/",
 			"blobPathEndsWith": ".csv",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/a8332c12-bd8c-444f-9264-74d4ddb5480c/resourceGroups/rg_data_factory/providers/Microsoft.Storage/storageAccounts/sadatafactoryqwerty",
