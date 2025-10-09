@@ -1,0 +1,25 @@
+{
+	"name": "event_adb",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "task3",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/datafactory/blobs/source_adb",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/a8332c12-bd8c-444f-9264-74d4ddb5480c/resourceGroups/rg_data_factory/providers/Microsoft.Storage/storageAccounts/sadatafactoryqwerty",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
