@@ -1,0 +1,24 @@
+{
+	"name": "rest_event_9am",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Rest_to_adls",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2025-11-09T09:00:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
