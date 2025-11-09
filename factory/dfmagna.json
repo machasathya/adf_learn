@@ -1,0 +1,9 @@
+{
+	"name": "dfmagna",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "77dac3b9-577a-494e-8653-9524562488e1",
+		"tenantId": "7af2a929-b20f-4b9e-afe3-e02c2a070412"
+	}
+}
