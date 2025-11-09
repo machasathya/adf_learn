@@ -1,0 +1,18 @@
+{
+	"name": "RestResource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Rest",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "practice"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "/users"
+		},
+		"schema": []
+	}
+}
