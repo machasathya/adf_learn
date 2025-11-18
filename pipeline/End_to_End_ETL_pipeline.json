@@ -124,7 +124,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Copy data1",
+						"activity": "raw -silver",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -156,11 +156,11 @@
 				}
 			},
 			{
-				"name": "Notebook1",
+				"name": "raw -silver",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Stored procedure1",
+						"activity": "Copy data1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -189,11 +189,11 @@
 				}
 			},
 			{
-				"name": "Notebook2",
+				"name": "silver-gold",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Notebook1",
+						"activity": "raw -silver",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -212,6 +212,126 @@
 				},
 				"linkedServiceName": {
 					"referenceName": "adbmagna",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "merge_dimcustomer",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "silver-gold",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SP_Merge_DimCustomer]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "merge_dimproduct",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "silver-gold",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SP_Merge_DimProduct]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "merge_dimdate",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "silver-gold",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SP_Merge_DimDate]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "merge_factsalesdeatils",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "merge_dimcustomer",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "merge_dimproduct",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "merge_dimdate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SP_Merge_FactSalesOrderDetail]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
 					"type": "LinkedServiceReference"
 				}
 			}
