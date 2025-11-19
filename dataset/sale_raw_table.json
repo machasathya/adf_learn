@@ -1,0 +1,15 @@
+{
+	"name": "sale_raw_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "on_prem_sales_db",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`sale_raw`"
+		}
+	}
+}
