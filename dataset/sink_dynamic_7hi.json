@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(\n    'outbound/csv extraction/year=', formatDateTime(pipeline().TriggerTime, 'yyyy'),\n    '/month=', formatDateTime(pipeline().TriggerTime, 'MM'),\n    '/day=', formatDateTime(pipeline().TriggerTime, 'dd'),\n    '/data_',\n    formatDateTime(pipeline().TriggerTime, 'yyyyMMddHHmmss'),\n    '.csv'\n)\n",
+					"value": "@concat(\n    'root/outbound/csv extraction/', formatDateTime(pipeline().TriggerTime, 'yyyy'),\n    '/', formatDateTime(pipeline().TriggerTime, 'MM'),\n    '/', formatDateTime(pipeline().TriggerTime, 'dd'),\n    '/data_',\n    formatDateTime(pipeline().TriggerTime, 'yyyyMMddHHmmss'),\n    '.csv'\n)\n",
 					"type": "Expression"
 				},
 				"folderPath": "sink",
