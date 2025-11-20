@@ -2,7 +2,9 @@
 	"name": "dfmagna",
 	"properties": {
 		"globalConfigurations": {
-			"PipelineBillingEnabled": "false"
+			"PipelineBillingEnabled": "true",
+			"factoryStagingLSReferenceName": "samagnaadls",
+			"factoryStagingLSType": "LinkedServiceReference"
 		}
 	},
 	"location": "eastus",
