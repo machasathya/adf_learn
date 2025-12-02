@@ -4,7 +4,8 @@
 		"globalConfigurations": {
 			"PipelineBillingEnabled": "true",
 			"factoryStagingLSReferenceName": "samagnaadls",
-			"factoryStagingLSType": "LinkedServiceReference"
+			"factoryStagingLSType": "LinkedServiceReference",
+			"PolicyValidationEnabled": "true"
 		}
 	},
 	"location": "eastus",
