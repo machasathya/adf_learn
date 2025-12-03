@@ -1,0 +1,140 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "samagnaadls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Raw",
+				"fileSystem": "practice"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "RawID",
+				"type": "String"
+			},
+			{
+				"name": "CreatedTimestamp",
+				"type": "String"
+			},
+			{
+				"name": "SalesOrderID",
+				"type": "String"
+			},
+			{
+				"name": "SalesOrderDetailID_Source",
+				"type": "String"
+			},
+			{
+				"name": "OrderDate",
+				"type": "String"
+			},
+			{
+				"name": "SalespersonKey",
+				"type": "String"
+			},
+			{
+				"name": "WarehouseKey",
+				"type": "String"
+			},
+			{
+				"name": "QuantitySold",
+				"type": "String"
+			},
+			{
+				"name": "UnitPrice",
+				"type": "String"
+			},
+			{
+				"name": "StandardCost",
+				"type": "String"
+			},
+			{
+				"name": "SalesAmount",
+				"type": "String"
+			},
+			{
+				"name": "DiscountAmount",
+				"type": "String"
+			},
+			{
+				"name": "TaxAmount",
+				"type": "String"
+			},
+			{
+				"name": "ShipMethod",
+				"type": "String"
+			},
+			{
+				"name": "CustomerID",
+				"type": "String"
+			},
+			{
+				"name": "CompanyName",
+				"type": "String"
+			},
+			{
+				"name": "Industry",
+				"type": "String"
+			},
+			{
+				"name": "ContactName",
+				"type": "String"
+			},
+			{
+				"name": "CustomerCity",
+				"type": "String"
+			},
+			{
+				"name": "CustomerStateProvince",
+				"type": "String"
+			},
+			{
+				"name": "CustomerCountryRegion",
+				"type": "String"
+			},
+			{
+				"name": "CustomerType",
+				"type": "String"
+			},
+			{
+				"name": "ProductID",
+				"type": "String"
+			},
+			{
+				"name": "ProductName",
+				"type": "String"
+			},
+			{
+				"name": "ProductCategory",
+				"type": "String"
+			},
+			{
+				"name": "ProductSubCategory",
+				"type": "String"
+			},
+			{
+				"name": "Weight",
+				"type": "String"
+			},
+			{
+				"name": "WeightUnit",
+				"type": "String"
+			},
+			{
+				"name": "DiscontinuedFlag",
+				"type": "String"
+			}
+		]
+	}
+}
